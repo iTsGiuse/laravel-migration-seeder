@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Migration;
+use App\Models\Train;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('index');
+        $treno = Train::all();
+
+        $data = [
+            'treni' => $treno
+        ];
+
+        return view('index', $data);
     }
 }

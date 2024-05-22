@@ -26,7 +26,7 @@ return new class extends Migration
             $table->dateTime('Cancellato');
             $table->timestamps();
         }); */
-        Schema::create('train', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->id(); 
             $table->string('Azienda', 255);
             $table->string('Stazione_di_partenza', 255);
@@ -48,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('train');
+        Schema::dropIfExists('trains');
     }
 };
